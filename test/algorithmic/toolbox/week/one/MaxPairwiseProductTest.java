@@ -25,4 +25,11 @@ public class MaxPairwiseProductTest {
         MaxPairwiseProduct.main(emptyArray);
         assertEquals("6", systemOutRule.getLog().trim());
     }
+
+    @Test
+    public void shouldHandleNumbersOutsideBoundsOfInteger() {
+        systemInMock.provideLines("2", "100000 90000");
+        MaxPairwiseProduct.main(emptyArray);
+        assertEquals("9000000000", systemOutRule.getLog().trim());
+    }
 }
