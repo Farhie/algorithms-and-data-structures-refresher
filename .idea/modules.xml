@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/algorithms-and-data-structures-refresher.iml" filepath="$PROJECT_DIR$/algorithms-and-data-structures-refresher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms-and-data-structures-refresher.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms-and-data-structures-refresher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms-and-data-structures-refresher_main.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms-and-data-structures-refresher_main.iml" group="algorithms-and-data-structures-refresher" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms-and-data-structures-refresher_test.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms-and-data-structures-refresher_test.iml" group="algorithms-and-data-structures-refresher" />
     </modules>
   </component>
 </project>

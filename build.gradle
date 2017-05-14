@@ -7,5 +7,16 @@ repositories {
 
 dependencies {
     testCompile 'com.github.stefanbirkner:system-rules:1.16.0'
-    testCompile 'junit.junit.4.+'
+    testCompile 'junit:junit:4.+'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+        test {
+            srcDirs = ['test']
+        }
+    }
 }

@@ -1,14 +1,17 @@
 package algorithmic.toolbox.week.one;
 
 
+import org.junit.Rule;
 import org.junit.Test;
-
-import static junit.framework.TestCase.fail;
+import org.junit.contrib.java.lang.system.SystemOutRule;
 
 public class MaxPairwiseProductTest {
 
+    @Rule
+    public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
+
     @Test
-    public void test() {
-        fail();
+    public void shouldReturnCorrectResultOnBaseCase() {
+        MaxPairwiseProduct.main();
     }
 }
