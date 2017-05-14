@@ -1,0 +1,10 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'com.github.stefanbirkner:system-rules:1.16.0'
+    testCompile 'junit.junit.4.+'
+}
