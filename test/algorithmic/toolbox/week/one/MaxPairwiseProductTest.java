@@ -3,7 +3,7 @@ package algorithmic.toolbox.week.one;
 
 import org.junit.Rule;
 import org.junit.Test;
-    import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
 
 import static org.junit.Assert.assertEquals;
@@ -33,13 +33,13 @@ public class MaxPairwiseProductTest {
         assertEquals("9000000000", systemOutRule.getLog().trim());
     }
 
-    @Test(timeout = 5000)
+    @Test(timeout = 30000)
     public void shouldHandleLargeInput() {
-        int totalNumberOfValues = 1000000;
+        int totalNumberOfValues = 100000;
         String largeInputString = generateNumericInputStringOf(totalNumberOfValues);
         systemInMock.provideLines(String.valueOf(totalNumberOfValues), largeInputString);
         MaxPairwiseProduct.main(emptyArray);
-        assertEquals("9000000000", systemOutRule.getLog().trim());
+        assertEquals("9999700002", systemOutRule.getLog().trim());
     }
 
     private String generateNumericInputStringOf(int totalNumbers) {
