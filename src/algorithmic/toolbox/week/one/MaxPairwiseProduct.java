@@ -5,16 +5,15 @@ import java.io.*;
 
 public class MaxPairwiseProduct {
     static long getMaxPairwiseProduct(long[] numbers) {
-        long result = 0;
         int n = numbers.length;
-        for (int i = 0; i < n; ++i) {
-            for (int j = i + 1; j < n; ++j) {
-                if (numbers[i] * numbers[j] > result) {
-                    result = numbers[i] * numbers[j];
-                }
+        for (int i = 0; i < n - 1; i++) {
+            if(numbers[i] > numbers[i+1]) {
+                long swapValue = numbers[i+1];
+                numbers[i+1] = numbers[i];
+                numbers[i] = swapValue;
             }
         }
-        return result;
+        return numbers[n - 1] * numbers[n - 2];
     }
 
     public static void main(String[] args) {
