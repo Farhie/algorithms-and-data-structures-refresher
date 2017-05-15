@@ -56,6 +56,13 @@ public class MaxPairwiseProductTest {
         assertEquals("0", systemOutRule.getLog().trim());
     }
 
+    @Test
+    public void shouldHandleTwoLargestNumbersBeingIdentical() {
+        systemInMock.provideLines("11", "68165 30342 87637 74297 2904 32873 86010 87637 66131 82858 82935");
+        MaxPairwiseProduct.main(emptyArray);
+        assertEquals("7680243769", systemOutRule.getLog().trim());
+    }
+
     private String generateNumericInputStringOf(int totalNumbers) {
         String input = "";
         for(int i = 0; i < totalNumbers; i++) {
