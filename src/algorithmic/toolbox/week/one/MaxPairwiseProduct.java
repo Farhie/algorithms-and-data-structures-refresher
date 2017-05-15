@@ -6,20 +6,22 @@ import java.io.*;
 public class MaxPairwiseProduct {
     static long getMaxPairwiseProduct(long[] numbers) {
         int n = numbers.length;
-        if(n == 1) {
+        if (n == 1) {
             return numbers[0];
         }
-        if(n == 0) {
+        if (n == 0) {
             return 0;
         }
-        for (int i = 0; i < n - 1; i++) {
-            if(numbers[i] > numbers[i+1]) {
-                long swapValue = numbers[i+1];
-                numbers[i+1] = numbers[i];
-                numbers[i] = swapValue;
+        int highestNumberPointer = 0;
+        int secondHighestNumberPointer = 1;
+        for (int i = 2; i < n; i++) {
+            if (numbers[i] > numbers[highestNumberPointer]) {
+                highestNumberPointer = i;
+            } else if(numbers[i] > numbers[secondHighestNumberPointer]) {
+                secondHighestNumberPointer = i;
             }
         }
-        return numbers[n - 1] * numbers[n - 2];
+        return numbers[highestNumberPointer] * numbers[secondHighestNumberPointer];
     }
 
     public static void main(String[] args) {
