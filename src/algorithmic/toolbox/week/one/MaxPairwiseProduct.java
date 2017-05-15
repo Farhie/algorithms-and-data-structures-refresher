@@ -12,18 +12,19 @@ public class MaxPairwiseProduct {
         if (n == 0) {
             return 0;
         }
-        int highestNumberPointer = 0;
-        int secondHighestNumberPointer = 1;
-        for (int i = 2; i < n; i++) {
-            if (numbers[i] > numbers[highestNumberPointer]) {
-                highestNumberPointer = i;
-                continue;
-            }
-            if(numbers[i] > numbers[secondHighestNumberPointer]) {
-                secondHighestNumberPointer = i;
+        int highestNumberIndex = 0;
+        for (int i = 0; i < n; i++) {
+            if (numbers[i] > numbers[highestNumberIndex]) {
+                highestNumberIndex = i;
             }
         }
-        return numbers[highestNumberPointer] * numbers[secondHighestNumberPointer];
+        int secondHighestNumberIndex = (highestNumberIndex == 0) ? 1 : 0;
+        for (int i = 0; i < n; i++) {
+            if (numbers[i] > numbers[secondHighestNumberIndex] && highestNumberIndex != i) {
+                secondHighestNumberIndex = i;
+            }
+        }
+        return numbers[highestNumberIndex] * numbers[secondHighestNumberIndex];
     }
 
     public static void main(String[] args) {
@@ -63,5 +64,4 @@ public class MaxPairwiseProduct {
             return Long.parseLong(next());
         }
     }
-
 }

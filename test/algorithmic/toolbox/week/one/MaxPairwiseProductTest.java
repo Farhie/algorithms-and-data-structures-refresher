@@ -63,6 +63,13 @@ public class MaxPairwiseProductTest {
         assertEquals("7680243769", systemOutRule.getLog().trim());
     }
 
+    @Test
+    public void shouldHandleSmallestPossibleInput() {
+        systemInMock.provideLines("2", "3 2");
+        MaxPairwiseProduct.main(emptyArray);
+        assertEquals("6", systemOutRule.getLog().trim());
+    }
+
     private String generateNumericInputStringOf(int totalNumbers) {
         String input = "";
         for(int i = 0; i < totalNumbers; i++) {
