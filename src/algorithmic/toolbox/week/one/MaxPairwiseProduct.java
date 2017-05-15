@@ -17,7 +17,9 @@ public class MaxPairwiseProduct {
         for (int i = 2; i < n; i++) {
             if (numbers[i] > numbers[highestNumberPointer]) {
                 highestNumberPointer = i;
-            } else if(numbers[i] > numbers[secondHighestNumberPointer]) {
+                continue;
+            }
+            if(numbers[i] > numbers[secondHighestNumberPointer]) {
                 secondHighestNumberPointer = i;
             }
         }
