@@ -6,6 +6,12 @@ import java.io.*;
 public class MaxPairwiseProduct {
     static long getMaxPairwiseProduct(long[] numbers) {
         int n = numbers.length;
+        if(n == 1) {
+            return numbers[0];
+        }
+        if(n == 0) {
+            return 0;
+        }
         for (int i = 0; i < n - 1; i++) {
             if(numbers[i] > numbers[i+1]) {
                 long swapValue = numbers[i+1];
@@ -18,9 +24,9 @@ public class MaxPairwiseProduct {
 
     public static void main(String[] args) {
         FastScanner scanner = new FastScanner(System.in);
-        long n = scanner.nextLong();
-        long[] numbers = new long[(int) n];
-        for (int i = 0; i < n; i++) {
+        long numberArrayLength = scanner.nextLong();
+        long[] numbers = new long[(int) numberArrayLength];
+        for (int i = 0; i < numberArrayLength; i++) {
             numbers[i] = scanner.nextLong();
         }
         System.out.println(getMaxPairwiseProduct(numbers));

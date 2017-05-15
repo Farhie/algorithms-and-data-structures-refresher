@@ -42,6 +42,20 @@ public class MaxPairwiseProductTest {
         assertEquals("9999700002", systemOutRule.getLog().trim());
     }
 
+    @Test
+    public void shouldHandleSingleNumberInput() {
+        systemInMock.provideLines("1", "100000");
+        MaxPairwiseProduct.main(emptyArray);
+        assertEquals("100000", systemOutRule.getLog().trim());
+    }
+
+    @Test
+    public void shouldHandleNoNumbersInput() {
+        systemInMock.provideLines("0", " ");
+        MaxPairwiseProduct.main(emptyArray);
+        assertEquals("0", systemOutRule.getLog().trim());
+    }
+
     private String generateNumericInputStringOf(int totalNumbers) {
         String input = "";
         for(int i = 0; i < totalNumbers; i++) {
