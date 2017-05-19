@@ -1,23 +1,12 @@
 package algorithmic.toolbox.week.one;
 
 
-import org.junit.Rule;
+import algorithmic.toolbox.util.SystemIOMock;
 import org.junit.Test;
-import org.junit.contrib.java.lang.system.SystemOutRule;
-import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.emptyStandardInputStream;
 
-public class MaxPairwiseProductTest {
-
-    @Rule
-    public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
-
-    @Rule
-    public final TextFromStandardInputStream systemInMock = emptyStandardInputStream();
-
-    private final String[] emptyArray = {};
+public class MaxPairwiseProductTest extends SystemIOMock {
 
     @Test
     public void shouldReturnCorrectResultOnBaseCase() {
@@ -72,7 +61,7 @@ public class MaxPairwiseProductTest {
 
     private String generateNumericInputStringOf(int totalNumbers) {
         String input = "";
-        for(int i = 0; i < totalNumbers; i++) {
+        for (int i = 0; i < totalNumbers; i++) {
             input = input.concat(i + " ");
         }
         return input;
