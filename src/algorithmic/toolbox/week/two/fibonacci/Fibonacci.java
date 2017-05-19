@@ -7,14 +7,14 @@ public class Fibonacci {
         if (n <= 1)
             return n;
 
-        long[] fibonacciSequence = new long[n];
+        long[] fibonacciSequence = new long[n + 1];
         initialiseFibonacciSequence(fibonacciSequence);
 
-        for (int i = 2; i < n; i++) {
+        for (int i = 2; i <= n; i++) {
             fibonacciSequence[i] = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
         }
 
-        return fibonacciSequence[n - 1];
+        return fibonacciSequence[n];
     }
 
     private static void initialiseFibonacciSequence(long[] fibonacciSequence) {

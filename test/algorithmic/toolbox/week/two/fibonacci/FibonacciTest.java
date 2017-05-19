@@ -22,6 +22,13 @@ public class FibonacciTest extends SystemIOMock {
     }
 
     @Test
+    public void shouldCorrectlyCalculateFibonacciForThree() {
+        systemInMock.provideLines("3");
+        Fibonacci.main(emptyArray);
+        assertEquals("2", systemOutRule.getLog().trim());
+    }
+
+    @Test
     public void shouldCorrectlyCalculateFibonacciForTen() {
         systemInMock.provideLines("10");
         Fibonacci.main(emptyArray);
@@ -32,6 +39,6 @@ public class FibonacciTest extends SystemIOMock {
     public void shouldCorrectlyCalculateFibonacciForSixtyInATimelyManner() {
         systemInMock.provideLines("60");
         Fibonacci.main(emptyArray);
-        assertEquals("956722026041", systemOutRule.getLog().trim());
+        assertEquals("1548008755920", systemOutRule.getLog().trim());
     }
 }
