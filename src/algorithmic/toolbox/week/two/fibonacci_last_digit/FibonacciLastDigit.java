@@ -15,10 +15,6 @@ public class FibonacciLastDigit {
             fibonacciSequence[i] = (fibonacciSequence[i - 1] + fibonacciSequence[i - 2]) % 10;
         }
 
-        for (int i = 0; i <= n; i++) {
-//            System.out.print(i+ ": " + fibonacciSequence[i] + ", ");
-        }
-
         return fibonacciSequence[n];
     }
 
