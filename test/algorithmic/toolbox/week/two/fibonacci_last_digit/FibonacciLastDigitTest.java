@@ -18,23 +18,31 @@ public class FibonacciLastDigitTest extends SystemIOMock {
     }
 
     @Test(timeout = 500)
-    public void shouldReturnZeroAsLastDigitForHundredthFibonacciNumber() {
+    public void shouldReturnFiveAsLastDigitForHundredthFibonacciNumber() {
         systemInMock.provideLines("100");
         FibonacciLastDigit.main(emptyArray);
         assertEquals("5", systemOutRule.getLog().trim());
     }
 
     @Test(timeout = 500)
-    public void shouldReturnZeroAsLastDigitForThreeHundredthFibonacciNumber() {
-        systemInMock.provideLines("300");
+    public void shouldReturnZeroAsLastDigitForThreeHundredthAndThirtyFirstFibonacciNumber() {
+        systemInMock.provideLines("331");
         FibonacciLastDigit.main(emptyArray);
-        assertEquals("0", systemOutRule.getLog().trim());
+        assertEquals("9", systemOutRule.getLog().trim());
     }
+
+    @Test(timeout = 500)
+    public void shouldReturnZeroAsLastDigitForLargeFibonacciNumber() {
+        systemInMock.provideLines("327305");
+        FibonacciLastDigit.main(emptyArray);
+        assertEquals("5", systemOutRule.getLog().trim());
+    }
+
 
     @Test(timeout = 500)
     public void shouldReturnZeroAsLastDigitForUpperBound() {
         systemInMock.provideLines(UPPER_BOUND);
         FibonacciLastDigit.main(emptyArray);
-        assertEquals("0", systemOutRule.getLog().trim());
+        assertEquals("5", systemOutRule.getLog().trim());
     }
 }

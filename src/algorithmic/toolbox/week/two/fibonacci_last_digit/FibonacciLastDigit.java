@@ -3,20 +3,28 @@ package algorithmic.toolbox.week.two.fibonacci_last_digit;
 import java.util.Scanner;
 
 public class FibonacciLastDigit {
+
     private static int getFibonacciLastDigitNaive(int n) {
         if (n <= 1)
             return n;
 
-        int previous = 0;
-        int current = 1;
+        int[] fibonacciSequence = new int[n + 1];
+        initialiseFibonacciSequence(fibonacciSequence);
 
-        for (int i = 0; i < n - 1; ++i) {
-            int tmp_previous = previous;
-            previous = current;
-            current = tmp_previous + current;
+        for (int i = 2; i <= n; i++) {
+            fibonacciSequence[i] = (fibonacciSequence[i - 1] + fibonacciSequence[i - 2]) % 10;
         }
 
-        return current % 10;
+        for (int i = 0; i <= n; i++) {
+//            System.out.print(i+ ": " + fibonacciSequence[i] + ", ");
+        }
+
+        return fibonacciSequence[n];
+    }
+
+    private static void initialiseFibonacciSequence(int[] fibonacciSequence) {
+        fibonacciSequence[0] = 0;
+        fibonacciSequence[1] = 1;
     }
 
     public static void main(String[] args) {
