@@ -1,7 +1,6 @@
 package algorithmic.toolbox.week.two.fibonacci;
 
 import algorithmic.toolbox.util.SystemIOMock;
-import algorithmic.toolbox.week.one.MaxPairwiseProduct;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -29,4 +28,10 @@ public class FibonacciTest extends SystemIOMock {
         assertEquals("55", systemOutRule.getLog().trim());
     }
 
+    @Test(timeout = 5000)
+    public void shouldCorrectlyCalculateFibonacciForOneThousandInATimelyManner() {
+        systemInMock.provideLines("1000");
+        Fibonacci.main(emptyArray);
+        assertEquals("55", systemOutRule.getLog().trim());
+    }
 }

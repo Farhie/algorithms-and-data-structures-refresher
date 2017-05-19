@@ -13,7 +13,11 @@ public class APlusB {
     }
 
     private static void validateInput(int a, int b) {
-        if(a < 0) {throw new IllegalArgumentException("a must be greater than zero");}
-        if(b > 9) {throw new IllegalArgumentException("b must be less than or equal to 9");}
+        if (a < 0) {
+            throw new IllegalArgumentException("a must be greater than zero");
+        }
+        if (b > 9) {
+            throw new IllegalArgumentException("b must be less than or equal to 9");
+        }
     }
 }

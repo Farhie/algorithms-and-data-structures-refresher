@@ -3,17 +3,18 @@ package algorithmic.toolbox.week.two.fibonacci;
 import java.util.Scanner;
 
 public class Fibonacci {
-  private static long calc_fib(int n) {
-    if (n <= 1)
-      return n;
+    private static long calc_fib(int n) {
 
-    return calc_fib(n - 1) + calc_fib(n - 2);
-  }
+        if (n <= 1)
+            return n;
 
-  public static void main(String args[]) {
-    Scanner in = new Scanner(System.in);
-    int n = in.nextInt();
+        return calc_fib(n - 1) + calc_fib(n - 2);
+    }
 
-    System.out.println(calc_fib(n));
-  }
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+
+        System.out.println(calc_fib(n));
+    }
 }

@@ -1,6 +1,6 @@
 package algorithmic.toolbox.week.two.fibonacci_huge;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class FibonacciHuge {
     private static long getFibonacciHugeNaive(long n, long m) {
@@ -8,7 +8,7 @@ public class FibonacciHuge {
             return n;
 
         long previous = 0;
-        long current  = 1;
+        long current = 1;
 
         for (long i = 0; i < n - 1; ++i) {
             long tmp_previous = previous;
@@ -18,7 +18,7 @@ public class FibonacciHuge {
 
         return current % m;
     }
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         long n = scanner.nextLong();

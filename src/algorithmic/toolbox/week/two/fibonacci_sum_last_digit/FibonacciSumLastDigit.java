@@ -1,6 +1,6 @@
 package algorithmic.toolbox.week.two.fibonacci_sum_last_digit;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class FibonacciSumLastDigit {
     private static long getFibonacciSumNaive(long n) {
@@ -8,8 +8,8 @@ public class FibonacciSumLastDigit {
             return n;
 
         long previous = 0;
-        long current  = 1;
-        long sum      = 1;
+        long current = 1;
+        long sum = 1;
 
         for (long i = 0; i < n - 1; ++i) {
             long tmp_previous = previous;
@@ -20,7 +20,7 @@ public class FibonacciSumLastDigit {
 
         return sum % 10;
     }
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         long n = scanner.nextLong();
