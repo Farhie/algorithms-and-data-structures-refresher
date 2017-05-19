@@ -18,6 +18,19 @@ public class GCDTest extends SystemIOMock {
         assertEquals("1", systemOutRule.getLog().trim());
     }
 
+    @Test
+    public void shouldCorrectlyCalculateGCDForSampleOneFromCourseMaterial() {
+        systemInMock.provideLines("18 35");
+        GCD.main(emptyArray);
+        assertEquals("1", systemOutRule.getLog().trim());
+    }
+
+    @Test(timeout = 500)
+    public void shouldCorrectlyCalculateGCDForSampleTwoFromCourseMaterial() {
+        systemInMock.provideLines("28851538 1183019");
+        GCD.main(emptyArray);
+        assertEquals("17657", systemOutRule.getLog().trim());
+    }
 
     @Test(timeout = 500)
     public void shouldCorrectlyCalculateGCDForUpperBound() {
@@ -25,6 +38,4 @@ public class GCDTest extends SystemIOMock {
         GCD.main(emptyArray);
         assertEquals(UPPER_BOUND, systemOutRule.getLog().trim());
     }
-
-
 }
