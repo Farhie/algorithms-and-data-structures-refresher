@@ -35,10 +35,10 @@ public class FibonacciTest extends SystemIOMock {
         assertEquals("55", systemOutRule.getLog().trim());
     }
 
-    @Test(timeout = 1000)
-    public void shouldCorrectlyCalculateFibonacciForSixtyInATimelyManner() {
-        systemInMock.provideLines("60");
+    @Test(timeout = 500)
+    public void shouldCorrectlyCalculateFibonacciForFortyFiveInATimelyManner() {
+        systemInMock.provideLines("45");
         Fibonacci.main(emptyArray);
-        assertEquals("1548008755920", systemOutRule.getLog().trim());
+        assertEquals("1134903170", systemOutRule.getLog().trim());
     }
 }
