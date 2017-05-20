@@ -1,2 +1,5 @@
 sudo: false
 language: java
+script:
+  - gradle assemble
+  - gradle check --debug
