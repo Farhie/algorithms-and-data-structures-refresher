@@ -25,7 +25,7 @@ public class FibonacciHugeTest extends SystemIOMock {
     }
 
     @Test(timeout = 500)
-    public void shouldCorrectlyCalculateFibonacciModuloForLargerInputInUnderHalfASecond( {
+    public void shouldCorrectlyCalculateFibonacciModuloForLargerInputInUnderHalfASecond() {
         systemInMock.provideLines("2816213588 30524");
         FibonacciHuge.main(emptyArray);
         assertEquals("10249", systemOutRule.getLog().trim());
