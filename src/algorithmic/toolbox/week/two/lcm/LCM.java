@@ -13,33 +13,16 @@ public class LCM {
         return (long) a * b;
     }
 
-    private static long lowestCommonMultiple(long valueA, long valueB) {
-        long largestNumber = valueA < valueB ? valueB : valueA;
 
-        long[] multiplesOfValueA = new long[(int) largestNumber];
-
-        for (int i = 1; i * valueA <= valueA * valueB; i++) {
-            multiplesOfValueA[i] = i * valueA;
+    private static long gcd_euclidean(long a, long b) {
+        if (b == 0) {
+            return a;
         }
-
-        for (int i = 1; i * valueB < valueA * valueB; i++) {
-            if(valueHasBeenSeenAsMultipleOfA((i * valueB), multiplesOfValueA)){
-                return i * valueB;
-            }
-        }
-
-        return valueA * valueB;
+        return gcd_euclidean(b, a % b);
     }
 
-    private static boolean valueHasBeenSeenAsMultipleOfA(long value, long[] multiplesOfValueA) {
-        for(long multipleOfA : multiplesOfValueA) {
-            if (multipleOfA == value) {
-                return true;
-            } else if(multipleOfA > value) {
-                return false;
-            }
-        }
-        return false;
+    private static long lowestCommonMultiple(long valueA, long valueB) {
+        return (valueA * valueB) / gcd_euclidean(valueA, valueB);
     }
 
     public static void main(String args[]) {
